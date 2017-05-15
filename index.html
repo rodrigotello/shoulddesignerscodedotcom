@@ -1,0 +1,325 @@
+<html>
+ <head>
+ 	<style type="text/css">
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			color: white;
+			font-family: sans-serif;
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		/*Rodrigo's code */
+		.main-container {
+			height: 100%;
+			margin: 0 auto;
+			max-width: 960px;
+		}
+
+		div .centerer {
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.main-message {
+			font-family: Helvetica, sans-serif;
+			font-size: 12em;
+			font-weight: 900;
+			margin: 1em auto;
+			padding: 1.5em 0;
+		}
+
+		footer .centerer{
+			position: absolute;
+			margin: 2em auto;
+			text-align: center;
+			padding: 2em;
+		}
+
+		/* Stolen code */
+		/* CodePen stolen #1 https://codepen.io/quasimondo/pen/lDdrF */
+		html {
+		  box-sizing: border-box;
+		}
+
+		*,
+		*:before,
+		*:after {
+		  box-sizing: inherit;
+		  padding: 0;
+		  margin: 0;
+		}
+
+		body {
+		  overflow: hidden;
+		  background: #000;
+		}
+
+		.wrapper {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  margin-left: 0px;
+		  transform: translateX(-50%) translateY(-50%);
+		}
+
+		.glitch {
+		  text-align: center;
+		  position: relative;
+		  animation: shake .2s infinite;
+		  animation-direction: alternate;
+		}
+
+		.glitch_fixed {
+		  text-align: center;
+		  position: relative;
+		  color: #98ef81;
+		  animation: color .2s infinite;
+		  animation-direction: alternate;
+		}
+
+		.glitch_opacity {
+		  text-align: center;
+		  position: relative;
+		  color: #ff0022;
+		  position: absolute;
+		  top: 0;
+		  left: -4px;
+		  animation: show .02s infinite;
+		  animation-direction: alternate;
+		}
+
+		.glitch_opacity span {
+		  color: #F802F8;
+		}
+
+		@keyframes show {
+		  50% {
+		    opacity: 0;
+		    text-shadow: 4px 4px #AAE90E;
+		  }
+		}
+
+		@keyframes color {
+		  50% {
+		    color: #b1b1b1;
+		  }
+		}
+
+		@keyframes shake {
+		  0% {
+		    transform: translate(2px, 1px) rotate(0deg);
+		  }
+		  10% {
+		    transform: translate(-1px, -2px) rotate(-1deg);
+		  }
+		  20% {
+		    transform: translate(-3px, 0px) rotate(1deg);
+		  }
+		  30% {
+		    transform: translate(0px, 2px) rotate(0deg);
+		  }
+		  40% {
+		    transform: translate(1px, -1px) rotate(1deg);
+		  }
+		  50% {
+		    transform: translate(-1px, 2px) rotate(-1deg);
+		  }
+		  60% {
+		    transform: translate(-3px, 1px) rotate(0deg);
+		  }
+		  70% {
+		    transform: translate(2px, 1px) rotate(-1deg);
+		  }
+		  80% {
+		    transform: translate(-1px, -1px) rotate(1deg);
+		  }
+		  90% {
+		    transform: translate(2px, 2px) rotate(0deg);
+		  }
+		  100% {
+		    transform: translate(1px, -2px) rotate(-1deg);
+		  }
+		}
+
+		// for extend
+		.span {
+		  color: #0301FA;
+		  animation: glitch .1s linear infinite;
+		  animation-direction: alternate;
+		  position: absolute;
+		  transform: translateY(0px);
+		}
+
+		.glithc span {
+		  position: absolute;
+		}
+
+		.glitch span:first-child {
+		  @extend .span;
+		  left: 0;
+		}
+
+		.glitch span:nth-child(2) {
+		  @extend .span;
+		  left: 32px;
+		}
+
+		.glitch span:nth-child(3) {
+		  @extend .span;
+		  left: 75px;
+		}
+
+		.glitch span:nth-child(4) {
+		  @extend .span;
+		  left: 92px;
+		}
+
+		.glitch span:nth-child(5) {
+		  @extend .span;
+		  left: 120px;
+		}
+
+		.glitch span:nth-child(6) {
+		  @extend .span;
+		  left: 150px;
+		}
+
+		@keyframes glitch {
+		  0% {
+		    transform: translateY(-20%);
+		    transform: translateX(-10%);
+		  }
+		  50% {
+		    transform: translateY(-15%);
+		    transform: translateX(-20%);
+		    color: #01ff01;
+		  }
+		  100% {
+		    transform: translateY(20%);
+		    transform: translateX(1%);
+		    color: #FA0103;
+		    clip: rect(40px, 0px, 40px, 0px);
+		  }
+		}
+
+		}
+ 	</style>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+ </head>
+ <body>
+ 	<div id="gradient" />
+ 	<div class="main-container">
+ 		<header>
+	 		<div class="centerer"><h1>Should designers code?</h1></div>
+	 	</header>
+	 	<div class="centerer main-message glitch" data-text="GLITCH">Whatevs.</div>
+	 	<footer class="centerer">Made by <a href="https://twitter.com/rodrigotellom">Rodrigo Tello</a></footer>
+	 </div>
+ </body>
+</html>
+<script type="text/javascript">
+var colors = new Array(
+  [62,35,255],
+  [60,255,60],
+  [255,35,98],
+  [45,175,230],
+  [255,0,255],
+  [255,128,0]);
+
+var step = 0;
+//color table indices for: 
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0,1,2,3];
+
+//transition speed
+var gradientSpeed = 0.01;
+
+function updateGradient()
+{
+  
+  if ( $===undefined ) return;
+  
+var c0_0 = colors[colorIndices[0]];
+var c0_1 = colors[colorIndices[1]];
+var c1_0 = colors[colorIndices[2]];
+var c1_1 = colors[colorIndices[3]];
+
+var istep = 1 - step;
+var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+ $('#gradient').css({
+   background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+  
+  step += gradientSpeed;
+  if ( step >= 1 )
+  {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+    
+    //pick two new target color indices
+    //do not pick the same as the current one
+    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    
+  }
+}
+
+setInterval(updateGradient,10);
+</script>
